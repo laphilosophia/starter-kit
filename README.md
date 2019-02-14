@@ -1,4 +1,4 @@
-## Startet Kit
+## Starter Kit
 
 To start the development server
 
