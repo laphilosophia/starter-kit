@@ -1,0 +1,6 @@
+.layout {
+    @include size(100vw, 100vh);
+    position: relative;
+    display: block;
+    overflow: hidden;
+}

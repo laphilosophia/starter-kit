@@ -1,0 +1,7 @@
+html,
+body {
+    @include size(100%);
+    position: relative;
+    font-size: 16px;
+    overflow: hidden;
+}
