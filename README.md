@@ -1,4 +1,4 @@
-## Raga
+## Startet Kit
 
 To start the development server
 
