@@ -12,7 +12,7 @@ exports.pages = function (env) {
         const options = {
             filename: `${viewName}.html`,
             template: `./views/${view}`,
-            inject: 'head'
+            inject: true
         };
 
         if (env === 'development') {

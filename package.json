@@ -24,7 +24,8 @@
         "pikaday": "latest",
         "rxjs": "latest",
         "swiper": "latest",
-        "turbolinks": "latest"
+        "turbolinks": "latest",
+        "utilies": "latest"
     },
     "devDependencies": {
         "@babel/core": "^7.2.2",

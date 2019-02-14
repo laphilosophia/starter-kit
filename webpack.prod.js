@@ -106,7 +106,7 @@ module.exports = env => {
                 keywords: pkg.keywords,
                 author: pkg.author,
                 template: './index.html',
-                inject: 'head',
+                inject: 'body',
                 minify: true
             }),
             ...utils.pages(env),

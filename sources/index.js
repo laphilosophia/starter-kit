@@ -5,9 +5,6 @@ import './styles/app.scss'
 import FastClick from 'fastclick'
 FastClick.attach(document.body)
 
-import Turbolinks from 'turbolinks'
-Turbolinks.start()
-
 // import(
 //     /* webpackChunkName: 'module' */
 //     /* webpackPreload: true */
@@ -15,3 +12,6 @@ Turbolinks.start()
 // ).then(({ default: module }) => {
 //     module()
 // })
+
+import apps from './scripts/app'
+apps('#buttons')
