@@ -4,14 +4,18 @@ exports.pages = function (env) {
     const path = require('path')
     const viewsFolder = path.resolve(__dirname, './views')
 
-    var pages = []
+    let pages = []
 
     fs.readdirSync(viewsFolder).forEach(view => {
         const viewName = view.split('.')[0];
 
         const options = {
+            title: pkg.title,
+            description: pkg.description,
+            keywords: pkg.keywords,
+            author: pkg.author,
             filename: `${viewName}.html`,
-            template: `./views/${view}`,
+            template: `./sources/views/${view}`,
             inject: true
         };
 

@@ -13,7 +13,7 @@ $fontsizes: (
     f8: rem-calc(10px),
 ) !default;
 @function size($key: 'f1') {
-  @return map-get($fontsizes, $key);
+    @return map-get($fontsizes, $key);
 }
 // usage:  size(f1);
 
@@ -98,8 +98,6 @@ $colors: (
 // settings
 $transition-timing : 175ms !default;
 
-// options
-$sidebar-width: 80px !default;
 
 
 // options

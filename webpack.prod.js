@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInjector = require('html-webpack-injector');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -15,6 +16,7 @@ module.exports = env => {
     return {
         devtool: 'source-map',
         entry: {
+            turbolink_head: 'turbolinks',
             polyfill: '@babel/polyfill',
             app: './sources/index.js'
         },
@@ -105,10 +107,22 @@ module.exports = env => {
                 description: pkg.description,
                 keywords: pkg.keywords,
                 author: pkg.author,
+                appMountId: pkg.name,
                 template: './index.html',
                 inject: 'body',
-                minify: true
+                minify: true,
+                chunks: ['turbolink_head', 'polyfill', 'app'],
+                googleAnalytics: {
+                    trackingId: 'UA-XXXX-XX',
+                    pageViewOnLoad: true
+                },
+                window: {
+                    env: {
+                        apiHost: 'http://myapi.com/api/v1'
+                    }
+                }
             }),
+            new HtmlWebpackInjector(),
             ...utils.pages(env),
             new CleanWebpackPlugin(buildPath),
             new FaviconsWebpackPlugin({

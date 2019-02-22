@@ -12,6 +12,3 @@ FastClick.attach(document.body)
 // ).then(({ default: module }) => {
 //     module()
 // })
-
-import apps from './scripts/app'
-apps('#buttons')

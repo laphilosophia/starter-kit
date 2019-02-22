@@ -1,6 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInjector = require('html-webpack-injector');
 const utils = require('./sources/pages');
 const pkg = require('./package.json');
 
@@ -8,6 +8,7 @@ module.exports = env => {
     return {
         devtool: 'eval-cheap-module-source-map',
         entry: {
+            turbolink_head: 'turbolinks',
             polyfill: '@babel/polyfill',
             app: './sources/index.js'
         },
@@ -94,9 +95,21 @@ module.exports = env => {
                 description: pkg.description,
                 keywords: pkg.keywords,
                 author: pkg.author,
+                appMountId: pkg.name,
                 template: './index.html',
-                inject: true
+                inject: true,
+                chunks: ['turbolink_head', 'polyfill', 'app'],
+                googleAnalytics: {
+                    trackingId: 'UA-XXXX-XX',
+                    pageViewOnLoad: true
+                },
+                window: {
+                    env: {
+                        apiHost: 'http://myapi.com/api/v1'
+                    }
+                }
             }),
+            new HtmlWebpackInjector(),
             ...utils.pages(env)
         ]
     }
