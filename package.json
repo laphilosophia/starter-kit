@@ -18,6 +18,7 @@
     },
     "private": true,
     "dependencies": {
+        "another-smoothie": "latest",
         "fastclick": "latest",
         "flexboxgrid": "latest",
         "lodash": "latest",
