@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>chevron-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.057191,10 L7.52859548,13.5285955 C7.26824595,13.788945 7.26824595,14.211055 7.52859548,14.4714045 C7.78894501,14.731754 8.21105499,14.731754 8.47140452,14.4714045 L12.4714045,10.4714045 C12.731754,10.211055 12.731754,9.78894501 12.4714045,9.52859548 L8.47140452,5.52859548 C8.21105499,5.26824595 7.78894501,5.26824595 7.52859548,5.52859548 C7.26824595,5.78894501 7.26824595,6.21105499 7.52859548,6.47140452 L11.057191,10 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4-faaliyet-alanlari" transform="translate(-360.000000, -801.000000)">
+            <g id="Artboard" transform="translate(353.000000, 796.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g id="color/1-copy-2" mask="url(#mask-2)" fill="#99AA6B" fill-rule="nonzero">
+                    <rect id="Rectangle" x="0" y="0" width="35" height="35"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

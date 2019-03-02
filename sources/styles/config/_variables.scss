@@ -1,16 +1,15 @@
 // typographies
 $font-family: 'Montserrat', serif !default;
 
-
 $fontsizes: (
-    f1: rem-calc(36px),
-    f2: rem-calc(30px),
-    f3: rem-calc(20px),
-    f4: rem-calc(18px),
-    f5: rem-calc(16px),
-    f6: rem-calc(14px),
-    f7: rem-calc(12px),
-    f8: rem-calc(10px),
+    f1: rem-calc(40px),
+    f2: rem-calc(24px),
+    f3: rem-calc(22px),
+    f4: rem-calc(20px),
+    f5: rem-calc(18px),
+    f6: rem-calc(16px),
+    f7: rem-calc(14px),
+    f8: rem-calc(12px),
 ) !default;
 @function size($key: 'f1') {
     @return map-get($fontsizes, $key);
@@ -20,8 +19,8 @@ $fontsizes: (
 
 $fontweight: (
     line    : 100,
-    thick   : 200,
-    thin    : 300,
+    thin    : 200,
+    light   : 300,
     regular : 400,
     semi    : 500,
     medium  : 600,
@@ -70,18 +69,19 @@ $zindexes: (
 
 // colors
 $colors: (
-    primary: #5f504d,
-    secondary: #e1c19e,
-    tertiary: #84664C,
-    text: #ffffff,
-    border: #979797,
-    disabled_back: #edf2f5,
-    disabled_text: #bac2c7,
-    map: #f2f2f2,
-    error: #c62828,
-    success: #2e7d32,
-    warning: #f57f17,
-    info: #1976d2
+    primary         : #141e28,
+    primary_light   : #153a59,
+    secondary       : #99aa6b,
+    secondary_light : #bfd38b,
+    tertiary        : #C5B358,
+    text            : #ffffff,
+    border          : #c8c8c8,
+    placeholder     : #9b9b9b,
+    background      : #fcfcfc,
+    error           : #c62828,
+    success         : #2e7d32,
+    warning         : #f57f17,
+    info            : #1976d2
 );
 
 // retrieve color from map ie. `color(primary)`
@@ -96,8 +96,13 @@ $colors: (
 
 
 // settings
-$transition-timing : 175ms !default;
+$settings: (
+    transition-timing: 175ms
+) !default;
 
+@function settings($setting-name) {
+    @return map-get($settings, $setting-name);
+}
 
 
 // options

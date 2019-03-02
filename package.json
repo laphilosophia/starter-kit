@@ -1,8 +1,8 @@
 {
-    "name": "starter-kit",
+    "name": "startet-kit",
     "version": "1.0.0",
-    "title": "Starter Kit",
-    "description": "Starter Kit",
+    "title": "Webpack 4.x frontend starter kit",
+    "description": "Webpack 4.x frontend starter kit",
     "keywords": [
         "starter",
         "kit"
@@ -19,8 +19,10 @@
     "private": true,
     "dependencies": {
         "fastclick": "latest",
-        "hyperscript": "latest",
+        "flexboxgrid": "latest",
+        "lodash": "latest",
         "rxjs": "latest",
+        "sanitize-html": "latest",
         "swiper": "latest",
         "turbolinks": "latest",
         "utilies": "latest"
@@ -33,6 +35,7 @@
         "@babel/preset-env": "^7.3.1",
         "@babel/register": "^7.0.0",
         "@babel/runtime": "^7.3.1",
+        "@beyonk/google-fonts-webpack-plugin": "^1.2.3",
         "ajv": "^6.8.1",
         "autoprefixer": "^9.4.7",
         "babel-loader": "^8.0.5",

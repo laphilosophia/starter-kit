@@ -5,6 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInjector = require('html-webpack-injector');
+const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -16,7 +17,6 @@ module.exports = env => {
     return {
         devtool: 'source-map',
         entry: {
-            turbolink_head: 'turbolinks',
             polyfill: '@babel/polyfill',
             app: './sources/index.js'
         },
@@ -110,20 +110,21 @@ module.exports = env => {
                 appMountId: pkg.name,
                 template: './index.html',
                 inject: 'body',
-                minify: true,
-                chunks: ['turbolink_head', 'polyfill', 'app'],
-                googleAnalytics: {
-                    trackingId: 'UA-XXXX-XX',
-                    pageViewOnLoad: true
-                },
-                window: {
-                    env: {
-                        apiHost: 'http://myapi.com/api/v1'
-                    }
-                }
+                minify: true
             }),
-            new HtmlWebpackInjector(),
             ...utils.pages(env),
+            new GoogleFontsPlugin({
+                fonts: [
+                    {
+                        family: "Karla",
+                        variants: [ "400", "700", "latin-ext" ]
+                    },
+                    {
+                        family: "Montserrat",
+                        variants: [ "400", "600", "800", "latin-ext" ]
+                    }
+                ]
+            }),
             new CleanWebpackPlugin(buildPath),
             new FaviconsWebpackPlugin({
                 logo: './sources/assets/icon.png',

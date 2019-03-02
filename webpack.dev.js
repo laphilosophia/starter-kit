@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInjector = require('html-webpack-injector');
+const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
 const utils = require('./sources/pages');
 const pkg = require('./package.json');
 
@@ -8,7 +9,6 @@ module.exports = env => {
     return {
         devtool: 'eval-cheap-module-source-map',
         entry: {
-            turbolink_head: 'turbolinks',
             polyfill: '@babel/polyfill',
             app: './sources/index.js'
         },
@@ -97,20 +97,21 @@ module.exports = env => {
                 author: pkg.author,
                 appMountId: pkg.name,
                 template: './index.html',
-                inject: true,
-                chunks: ['turbolink_head', 'polyfill', 'app'],
-                googleAnalytics: {
-                    trackingId: 'UA-XXXX-XX',
-                    pageViewOnLoad: true
-                },
-                window: {
-                    env: {
-                        apiHost: 'http://myapi.com/api/v1'
-                    }
-                }
+                inject: true
             }),
-            new HtmlWebpackInjector(),
-            ...utils.pages(env)
+            ...utils.pages(env),
+            new GoogleFontsPlugin({
+                fonts: [
+                    {
+                        family: "Karla",
+                        variants: [ "400", "700", "latin-ext" ]
+                    },
+                    {
+                        family: "Montserrat",
+                        variants: [ "400", "600", "800", "latin-ext" ]
+                    }
+                ]
+            })
         ]
     }
 };

@@ -3,6 +3,7 @@ exports.pages = function (env) {
     const fs = require('fs')
     const path = require('path')
     const viewsFolder = path.resolve(__dirname, './views')
+    const pkg = require('../package.json')
 
     let pages = []
 

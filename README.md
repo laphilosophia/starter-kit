@@ -1,4 +1,4 @@
-## Fettahoğlu & Evren - Avukatlık ve Arabuluculuk Bürosu
+## Webpack 4.x frontend starter kit
 
 To start the development server
 
